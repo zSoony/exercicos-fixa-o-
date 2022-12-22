@@ -1,0 +1,65 @@
+package Accounts;
+
+public class Account {
+
+	private int Number;
+	private String holder ;
+	private double value;
+	
+	
+	
+	public Account(int number, String holder, double valueInitial) {
+		
+		Number = number;
+		this.holder = holder;
+	    deposit (valueInitial);
+	}
+	
+	
+	public Account(int number, String holder) {
+		
+		Number = number;
+		this.holder = holder;
+	
+	}
+
+
+	public String getHolder() {
+		return holder;
+	}
+
+
+	public void setHolder(String holder) {
+		this.holder = holder;
+	}
+
+
+	public int getNumber() {
+		return Number;
+	}
+
+
+	public double getValue() {
+		return value;
+	}
+
+
+	public void deposit (double amount){
+		value += amount;
+	}
+	
+	public void whitdraw (double amount) {
+		value -= amount + 5.0;
+	}
+	
+	public String toString() {
+		return "Account "
+				+ Number
+				+ ", holder , "
+				+ holder
+				+", Value $ "
+				+ String.format("%.2f", value);
+	
+	}
+	
+}
